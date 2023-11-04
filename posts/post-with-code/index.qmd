@@ -1,17 +1,69 @@
 ---
 title: "Post With Code"
-author: "Harlow Malloc"
+author: "Birusod"
 date: "2023-11-03"
 categories: [news, code, analysis]
 image: "image.jpg"
 ---
 
-This is a post with executable code.
+## A Good Example Of HTML Code
+
+HTML is very easy to write. The important things to know are the different tags to use for the appropriate purpose.
+
+There are multiple options to use depend on the objectives and aesthetics.
 
 ```{r}
 1 + 1
 ```
 
+## Libraries
+
 ```{r}
-2 + 2
+pacman::p_load(
+  tidyverse,
+  hrbrthemes,
+  scales, 
+  ggtext)
+```
+
+## Load Data
+
+```{r}
+data("mtcars")
+df <- mtcars |> 
+  tibble() |> 
+  mutate(across(
+    .cols = c(cyl, vs:carb),
+    .fns = factor
+  ))
+```
+
+## Wrangling
+
+### Plot-1
+
+```{r}
+df |> 
+  ggplot(aes(mpg, disp, color = cyl)) +
+  geom_point() +
+  labs(title = '**MPG** by **DISP**') +
+  theme_light() +
+  theme(
+    plot.title = element_markdown()
+  )
+
+```
+
+### Plot-2
+
+```{r}
+df |> 
+  ggplot(aes(mpg, disp, color = cyl)) +
+  geom_point() +
+  facet_wrap(~ am, scales = 'free') +
+  labs(title = '**MPG** by **DISP**') +
+  theme_light() +
+  theme(
+    plot.title = element_markdown()
+  )
 ```

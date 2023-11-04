@@ -18,8 +18,17 @@ website:
         href: https://myaccount.google.com/
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    #theme: theme.scss
+    theme: sandstone
+    mainfont: roboto
+    fontcolor: "#212529"
+    fontsize: 1rem
+    monofont: fira code
+    css: style.css
+    toc: true
+    toc-location: left
+    toc-expand: 1
+    toc-depth: 3
 
-editor: visual
+editor: source
 

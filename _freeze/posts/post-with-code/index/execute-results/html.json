@@ -1,8 +1,10 @@
 {
-  "hash": "9fa8cebd58dd4082cbfdb9ee656cd74f",
+  "hash": "20e32831c81c74976da6c8508fd08167",
   "result": {
-    "markdown": "---\ntitle: \"Post With Code\"\nauthor: \"Harlow Malloc\"\ndate: \"2023-11-03\"\ncategories: [news, code, analysis]\nimage: \"image.jpg\"\n---\n\n\nThis is a post with executable code.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
-    "supporting": [],
+    "markdown": "---\ntitle: \"Post With Code\"\nauthor: \"Birusod\"\ndate: \"2023-11-03\"\ncategories: [news, code, analysis]\nimage: \"image.jpg\"\n---\n\n\n## A Good Example Of HTML Code\n\nHTML is very easy to write. The important things to know are the different tags to use for the appropriate purpose.\n\nThere are multiple options to use depend on the objectives and aesthetics.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n\n\n## Libraries\n\n\n::: {.cell}\n\n```{.r .cell-code}\npacman::p_load(\n  tidyverse,\n  hrbrthemes,\n  scales, \n  ggtext)\n```\n:::\n\n\n## Load Data\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndata(\"mtcars\")\ndf <- mtcars |> \n  tibble() |> \n  mutate(across(\n    .cols = c(cyl, vs:carb),\n    .fns = factor\n  ))\n```\n:::\n\n\n## Wrangling\n\n### Plot-1\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndf |> \n  ggplot(aes(mpg, disp, color = cyl)) +\n  geom_point() +\n  labs(title = '**MPG** by **DISP**') +\n  theme_light() +\n  theme(\n    plot.title = element_markdown()\n  )\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-4-1.png){width=672}\n:::\n:::\n\n\n### Plot-2\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndf |> \n  ggplot(aes(mpg, disp, color = cyl)) +\n  geom_point() +\n  facet_wrap(~ am, scales = 'free') +\n  labs(title = '**MPG** by **DISP**') +\n  theme_light() +\n  theme(\n    plot.title = element_markdown()\n  )\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-5-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "index_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
